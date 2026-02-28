@@ -40,21 +40,22 @@ function Room() {
     }, []);
 
     return (
-        <div>
-            <div>
-                <h1>Room Component</h1>
-                <p>This is where the editor shall be.</p>
-                <p>Room Id: {roomId}</p>
-                <p>Username: {username}</p>
+        <div style={{height:'100vh', display:'flex', flexDirection:'column'}}>
+            <div style={{padding:'10px 20px', backgroundColor: '#1e1e1e', color: 'cyan', display:'flex', gap:'20px'}}>
+                <span style={{fontSize:'18px', fontWeight:'bold'}}>Kode.io</span>
+                <span>Room Id: {roomId.slice(0,8)}</span>
+                <span>Username: {username}</span>
             </div>
 
-        <Editor
-            height="500px"
-            defaultLanguage="javascript"
-            value={code}
-            theme="vs-dark"
-            onChange={handleEditorChange}
-        />
+            <div style={{flex:1}}>
+                <Editor
+                    height="100%"
+                    defaultLanguage="javascript"
+                    value={code}
+                    theme="vs-dark"
+                    onChange={handleEditorChange}
+                />
+            </div>
         </div>
     )
 }
